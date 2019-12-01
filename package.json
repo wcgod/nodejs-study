@@ -1,0 +1,17 @@
+{
+  "name": "sunday01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sunday01ex01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nconf": "^0.10.0"
+  }
+}
