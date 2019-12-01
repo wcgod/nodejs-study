@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home.ejs</title>
+</head>
+<body>
+    <h1>홈페이지</h1>
+    <ul>
+    <%
+        for(var data of urlData) {
+    %>
+        <li><a href="<%=data.location%>"><%=data.title%></a></li>
+    <%
+        } // end of for
+    %>
+    </ul>
+</body>
+</html>
