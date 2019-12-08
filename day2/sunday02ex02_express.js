@@ -1,4 +1,4 @@
-// sunday02ex02_express.js carList 배열을 만들어 화면에 뿌려준다.
+// sunday02ex02_express.js
 const http = require('http');
 const express = require('express');
 const app = express();
@@ -24,6 +24,30 @@ router.route('/car/list').get((req, res)=> {
 
     // car_lst.ejs 페이지로 렌더링
     req.app.render('car_list', {carList:carList}, (err, html)=>{
+        if(err) throw err;
+
+        res.end(html);
+    })
+});
+// : >> params 객체에서 쓸수 있도록 만든다
+router.route('/car/detail/:_id').get((req, res)=> {
+    console.log('/car/detail/:_id 요청됨');
+
+    //params에서 _id를 받아온다.
+    let _id = req.params._id;
+    let car = null;
+    for (item of carList) {
+        if(item._id == _id) {
+            car = item;
+            break;
+        }
+    }
+    if(car==null) {
+        console.log('검색 내용이 없습니다.');
+    }
+
+    //car_detail.ejs 페이지로 렌더링
+    req.app.render('car_detail', {car:car}, (err, html)=>{
         if(err) throw err;
 
         res.end(html);
