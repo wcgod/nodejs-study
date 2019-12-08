@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>car_detail.ejs</title>
+</head>
+<body>
+
+    <h1>자동차 정보 수정</h1>
+    <%
+    if(car==null) {
+    %>
+        <h2>검색 내용이 없습니다!</h2>
+    <%
+    } else {
+    %>
+        <form action="/car/modify/<%=car._id%>" method="post">
+            <table border="1">
+                <tr>
+                    <th>제품명</th><td><input type="text" name="name" value="<%=car.name%>"></td>
+                </tr>
+                <tr>
+                    <th>가격</th><td><input type="text" name="price" value="<%=car.price%>"></td>
+                </tr>
+                <tr>
+                    <th>제조사</th><td><input type="text" name="company" value="<%=car.company%>"></td>
+                </tr>
+                <tr>
+                    <th>연식</th><td><input type="text" name="year" value="<%=car.year%>"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="수정">
+                        <button a href="/car/list">목록</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    <%
+    } // end of if
+    %>
+
+</body>
+</html>
