@@ -23,7 +23,7 @@ router.route('/car/list').get((req, res)=> {
     console.log('/car/list 요청됨');
 
     // car_lst.ejs 페이지로 렌더링
-    req.app.render('car_list2', {carList:carList}, (err, html)=>{
+    req.app.render('car_list', {carList:carList}, (err, html)=>{
         if(err) throw err;
 
         res.end(html);
