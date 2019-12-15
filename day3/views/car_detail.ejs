@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>car_detail.ejs</title>
+</head>
+<body>
+
+    <h1>자동차 정보 상세페이지</h1>
+    <%
+    console.log(car);
+    if(car==null) {
+    %>
+        <h2>검색 내용이 없습니다!</h2>
+    <%
+    } else {
+    %>
+        <table border="1">
+            <tr>
+                <th>제품명</th><td><%=car.name%></td>
+            </tr>
+            <tr>
+                <th>가격</th><td><%=car.price%></td>
+            </tr>
+            <tr>
+                <th>제조사</th><td><%=car.company%></td>
+            </tr>
+            <tr>
+                <th>연식</th><td><%=car.year%></td>
+            </tr>
+        </table>
+        <a href="/car/modify/<%=car._id%>">수정</a>
+        <a href="/car/delete/<%=car._id%>">삭제</a>
+        <a href="/car/list">목록</a>
+    <%
+    } // end of if
+    %>
+
+</body>
+</html>

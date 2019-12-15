@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자동차 목록</title>
+</head>
+<body>
+    <h1>중고 자동차 목록</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>이름</th>
+            <th>가격</th>
+            <th>회사</th>
+            <th>연식</th>
+        </tr>
+        <%
+        for(var car of carList) {
+        %>
+        <tr>
+            <td><a href="/car/detail/<%=car._id%>"><%=car.name %></a></td>
+            <td><%=car.price %></td>
+            <td><%=car.company %></td>
+            <td><%=car.year %></td>
+        </tr>
+        <%
+        }
+        %>
+    </table>
+    <a href="/car/input.html">자동차입력</a>
+</body>
+</html>
